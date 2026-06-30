@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Trending US & UK News · Supreme Court & Royal Drama</title>
+  <meta name="description" content="US Supreme Court landmark rulings on birthright citizenship, transgender sports, campaign finance & Prince Harry royal security drama." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+  <meta name="monetag" content="239f5fdf04ce10d92c9ef0e87e2b4e15">
+  <style>
+    /* ===== RESET & BASE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #eef2f7;
+      color: #0a1a2e;
+      padding: 1.5rem 1rem;
+      line-height: 1.7;
+    }
+
+    .wrapper {
+      max-width: 1140px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 32px;
+      box-shadow: 0 30px 60px -20px rgba(0, 10, 40, 0.3);
+      overflow: hidden;
+    }
+
+    /* ===== HERO BANNER - TWO IMAGES SIDE BY SIDE ===== */
+    .hero-banner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: #071526;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .hero-banner img:hover {
+      transform: scale(1.02);
+      filter: brightness(1.08);
+    }
+
+    .hero-caption {
+      background: #0a1f3a;
+      padding: 0.7rem 2rem;
+      text-align: center;
+      color: #b8cee8;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      border-top: 1px solid #1f3d60;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-caption span {
+      background: #1a3a5c;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      color: #e8f0fe;
+    }
+
+    .hero-caption .highlight {
+      background: #b22234;
+      color: #fff;
+    }
+
+    /* ===== CONTENT AREA ===== */
+    .content {
+      padding: 2.5rem 2.8rem 1.5rem;
+    }
+
+    /* ===== HEADLINE ===== */
+    .main-headline {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #071526;
+      margin-bottom: 0.2rem;
+      border-left: 7px solid #b22234;
+      padding-left: 1.3rem;
+    }
+
+    .sub-tag {
+      display: inline-block;
+      background: #dce5f2;
+      color: #1a3a6b;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.3rem 1.6rem;
+      border-radius: 40px;
+      letter-spacing: 0.5px;
+      margin: 0.5rem 0 1.8rem 1.3rem;
+    }
+
+    .divider {
+      height: 4px;
+      background: linear-gradient(90deg, #b22234, #2a5a8a, #b22234);
+      width: 100%;
+      margin: 1.5rem 0 2.5rem;
+      border-radius: 10px;
+    }
+
+    /* ===== STORY CARDS ===== */
+    .story {
+      background: #f8fbfe;
+      border-radius: 24px;
+      padding: 2rem 2.2rem 2.2rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid #e2ebf6;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .story:hover {
+      border-color: #b0c8e4;
+      box-shadow: 0 12px 32px rgba(26, 58, 107, 0.07);
+    }
+
+    .story-badge {
+      display: inline-block;
+      font-weight: 800;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 0.25rem 1.2rem;
+      border-radius: 40px;
+      margin-bottom: 0.6rem;
+    }
+
+    .badge-us {
+      background: #b22234;
+      color: #fff;
+    }
+
+    .badge-uk {
+      background: #1a3a6b;
+      color: #fff;
+    }
+
+    .story h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #0b1f38;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .story .headline-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #b22234;
+      margin-bottom: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #fef0f0;
+      border-radius: 14px;
+      border-left: 4px solid #b22234;
+    }
+
+    .story p {
+      color: #1a3047;
+      margin-bottom: 0.9rem;
+      font-size: 1rem;
+    }
+
+    .story p strong {
+      color: #0b1f38;
+      font-weight: 700;
+    }
+
+    .story h3 {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #1a3a5c;
+      margin: 1.5rem 0 0.4rem;
+      padding-left: 0.8rem;
+      border-left: 5px solid #b22234;
+      padding-left: 1rem;
+    }
+
+    .story h3:first-of-type {
+      margin-top: 0.8rem;
+    }
+
+    .bullet-point {
+      padding-left: 1.8rem;
+      margin-bottom: 0.6rem;
+      position: relative;
+      font-weight: 500;
+      color: #1a3047;
+    }
+
+    .bullet-point::before {
+      content: "▸";
+      color: #b22234;
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      font-size: 1.2rem;
+    }
+
+    .highlight-box {
+      background: #eaf1fb;
+      border-radius: 16px;
+      padding: 1.2rem 1.8rem;
+      margin: 1.2rem 0 0.2rem;
+      border-left: 6px solid #1a3a6b;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #0b1f38;
+    }
+
+    .highlight-box-red {
+      background: #fef0f0;
+      border-left-color: #b22234;
+    }
+
+    /* ===== STRATEGY SECTION ===== */
+    .strategy-section {
+      background: #0b1f38;
+      border-radius: 28px;
+      padding: 2.2rem 2.5rem;
+      margin: 2.5rem 0 0.5rem;
+      color: #e6eff9;
+    }
+
+    .strategy-section h3 {
+      color: #ffffff;
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      border-bottom: 3px solid #3b6cb0;
+      padding-bottom: 0.5rem;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .strategy-card {
+      background: #142f4a;
+      padding: 1.5rem 1.3rem;
+      border-radius: 18px;
+      border: 1px solid #2a4a6a;
+      transition: background 0.2s;
+    }
+
+    .strategy-card:hover {
+      background: #1a3857;
+    }
+
+    .strategy-card h4 {
+      color: #facc15;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .strategy-card p {
+      font-size: 0.95rem;
+      color: #cbdae9;
+      line-height: 1.6;
+    }
+
+    .strategy-card strong {
+      color: #ffffff;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer-note {
+      text-align: right;
+      padding: 1.8rem 0 0.2rem;
+      font-size: 0.85rem;
+      color: #5b7290;
+      border-top: 1px solid #dce2ec;
+      margin-top: 1.8rem;
+    }
+
+    .footer-note span {
+      background: #eef2f7;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      body {
+        padding: 0.8rem;
+      }
+
+      .content {
+        padding: 1.5rem 1.2rem 0.5rem;
+      }
+
+      .hero-banner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-banner img {
+        height: 200px;
+      }
+
+      .hero-caption {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.8rem;
+        gap: 0.8rem;
+      }
+
+      .main-headline {
+        font-size: 1.7rem;
+        padding-left: 0.8rem;
+        border-left-width: 5px;
+      }
+
+      .sub-tag {
+        margin-left: 0;
+        font-size: 0.7rem;
+      }
+
+      .story {
+        padding: 1.2rem 1.2rem 1.5rem;
+      }
+
+      .story h2 {
+        font-size: 1.4rem;
+      }
+
+      .story .headline-text {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+      }
+
+      .strategy-section {
+        padding: 1.5rem 1.2rem;
+        margin: 1.5rem 0 0;
+        border-radius: 20px;
+      }
+
+      .strategy-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .strategy-section h3 {
+        font-size: 1.4rem;
+      }
+
+      .footer-note {
+        text-align: center;
+        font-size: 0.75rem;
+      }
+
+      .highlight-box {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-banner img {
+        height: 150px;
+      }
+
+      .main-headline {
+        font-size: 1.4rem;
+      }
+
+      .story h2 {
+        font-size: 1.2rem;
+      }
+
+      .story h3 {
+        font-size: 1rem;
+      }
+
+      .bullet-point {
+        padding-left: 1.4rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <!-- ============================================================ -->
+    <!-- HERO BANNER: TWO IMAGES (pasindu1.png & pasindu2.png)          -->
+    <!-- ============================================================ -->
+    <div class="hero-banner">
+      <img src="pasindu1.png" alt="US Supreme Court · Birthright Citizenship · Transgender Sports · Campaign Finance" />
+      <img src="pasindu2.png" alt="Prince Harry · Meghan Markle · Royal Security Drama · UK Trip" />
+    </div>
+
+    <div class="hero-caption">
+      <span>📸 pasindu1.png</span> — Supreme Court: Birthright · Transgender Sports · Campaign Finance
+      <span class="highlight">|</span>
+      <span>📸 pasindu2.png</span> — Prince Harry: Royal Security &amp; UK Trip Drama
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- CONTENT                                                       -->
+    <!-- ============================================================ -->
+    <div class="content">
+
+      <!-- MAIN TITLE -->
+      <h1 class="main-headline">🔥 Top Trending US & UK News Stories</h1>
+      <div class="sub-tag">🇺🇸 🇬🇧 Breaking News · June 2026</div>
+
+      <div class="divider"></div>
+
+      <!-- ========================================================== -->
+      <!-- STORY 1: US SUPREME COURT                                   -->
+      <!-- ========================================================== -->
+      <div class="story">
+        <div class="story-badge badge-us">🇺🇸 STORY 1</div>
+        <h2>US Supreme Court Landmark Rulings</h2>
+
+        <div class="headline-text">
+          Headline: US Supreme Court Drops Bombshell Rulings: Birthright Citizenship Upheld, Major Shift in Transgender Sports and Campaign Finance
+        </div>
+
+        <p>
+          The US Supreme Court has just delivered a series of massive, landscape-shifting rulings that are sending shockwaves across the country, impacting everything from the upcoming elections to high school sports.
+        </p>
+
+        <!-- Sub-point 1 -->
+        <h3>🔹 A Major Blow to Trump's Agenda: Birthright Citizenship Safeguarded</h3>
+        <p>
+          In a highly anticipated decision, the Supreme Court has upheld the 14th Amendment's guarantee of birthright citizenship. This rules against former President Donald Trump's long-standing promise to end automatic citizenship for children born in the US to undocumented parents. Legal experts are calling this a historic confirmation of constitutional rights, marking a significant setback for the conservative immigration agenda.
+        </p>
+
+        <!-- Sub-point 2 -->
+        <h3>🔹 Transgender Athletes Ban: A "Big Win" for Conservatives</h3>
+        <p>
+          In a separate 6-3 ruling, the conservative majority court voted to allow individual states to ban transgender athletes from participating in girls' and women's sports based on their biological sex at birth. Trump supporters and conservative groups are celebrating this as a major victory for fairness in women's sports, while LGBTQ+ advocacy groups have heavily condemned the decision.
+        </p>
+
+        <!-- Sub-point 3 -->
+        <h3>🔹 Campaign Finance Limits Removed</h3>
+        <p>
+          Adding fuel to the political fire, the court also lifted spending limits on political parties supporting specific candidates. This decision is expected to flood the upcoming election cycle with unprecedented amounts of corporate and private donor cash, a move that critics argue weakens democracy but Republicans view as a victory for free speech.
+        </p>
+
+        <!-- Highlight box -->
+        <div class="highlight-box highlight-box-red">
+          ⚡ With these rulings, the political atmosphere in the US is officially at a boiling point.
+        </div>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- STORY 2: PRINCE HARRY ROYAL SECURITY DRAMA                  -->
+      <!-- ========================================================== -->
+      <div class="story">
+        <div class="story-badge badge-uk">🇬🇧 STORY 2</div>
+        <h2>Prince Harry Royal Security Drama</h2>
+
+        <div class="headline-text">
+          Headline: Prince Harry's Planned UK Return Sparks Security Drama: Will Meghan and the Kids Stay Behind?
+        </div>
+
+        <p>
+          Prince Harry's highly anticipated summer trip to the UK is hanging by a thread after his latest request for official police protection was reportedly rejected by UK authorities.
+        </p>
+
+        <p>
+          The Duke of Sussex, who was planning a family visit, is said to be "exploring every legal option" to secure protection for his family while on British soil. However, with the British government holding its ground, royal insiders claim that this decision has thrown the entire trip into chaos.
+        </p>
+
+        <h3>🔸 Will Meghan and the Children Boycott the Trip?</h3>
+        <p>
+          Sources close to the Sussexes suggest that Prince Harry is deeply concerned about the safety of his wife, Meghan Markle, and their children, Archie and Lilibet. Rumors are already swirling in London and California that Meghan may choose to stay behind in Montecito, avoiding the UK altogether due to safety risks and ongoing royal tensions.
+        </p>
+
+        <p>
+          With the British media heavily divided and the public closely watching, Harry's next move could either bridge the gap with the Royal Family or widen the rift permanently.
+        </p>
+
+        <div class="highlight-box">
+          👑 Will Meghan and the children join Harry in the UK, or will this trip become a solo mission? The world is watching.
+        </div>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- STRATEGIC TIPS FOR DRIVING FREE TRAFFIC                     -->
+      <!-- ========================================================== -->
+      <div class="strategy-section">
+        <h3>📈 Strategic Tips for Driving Free Traffic</h3>
+
+        <div class="strategy-grid">
+          <!-- Tip 1 -->
+          <div class="strategy-card">
+            <h4>📌 Pinterest Engagement</h4>
+            <p>
+              Create eye-catching pins on Canva using bold text like <strong>"Trump's Massive Supreme Court Loss"</strong> or <strong>"Harry &amp; Meghan UK Trip Cancelled?"</strong>. Link these pins directly to your blog posts.
+            </p>
+          </div>
+
+          <!-- Tip 2 -->
+          <div class="strategy-card">
+            <h4>💬 Reddit &amp; Quora Formatting</h4>
+            <p>
+              Find active threads regarding US Politics or the Royal Family. Write a short, engaging <strong>3-line summary</strong> of the news and include your link at the end for "Full detailed coverage."
+            </p>
+          </div>
+
+          <!-- Tip 3 -->
+          <div class="strategy-card">
+            <h4>📱 Facebook Viral Groups</h4>
+            <p>
+              Share the articles in high-traffic US/UK news groups. Instead of pasting the whole article, post the headline and a <strong>controversial question</strong> to trigger comments, which forces the Facebook algorithm to boost your post.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- FOOTER                                                      -->
+      <!-- ========================================================== -->
+      <div class="footer-note">
+        <span>© 2026 · Top Trending News · Images: pasindu1.png &amp; pasindu2.png</span>
+      </div>
+
+    </div>
+    <!-- /content -->
+
+  </div>
+  <!-- /wrapper -->
+
+</body>
+</html>
